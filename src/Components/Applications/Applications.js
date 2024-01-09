@@ -1,8 +1,20 @@
 import React from "react";
+import Card from "../Card/Card";
 
-const Applications = () => {
+const Applications = ({ getUserApps }) => {
+  const apps = getUserApps();
+
   return (
-    <h1>Applications!</h1>
+    <div>
+      <h1>Applications!</h1>
+      {
+        apps.map((app, index) => {
+          return (
+            <Card key={index} application={app}/>
+          );
+        })
+      }
+    </div>
   );
 }
 
